@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+      <title>Paraíso</title>
         <style>
             .container {
   overflow: hidden;
+
 }
 
 .filterDiv {
   float: left;
-  display: none; /* Hidden by default */
+  display: none; /* by default */
 }
 
 /* The "show" class is added to the filtered elements */
@@ -20,43 +23,96 @@
                 display: flex;
                 flex-direction: row;
                 text-align: center;
+                flex-wrap: wrap;
+                width: 60%;
+            }
+            .btnflex {
+              position: absolute;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              top: 67px;
+              left: 60%;
+              width: 40%;
             }
             .ull {
                 text-align: center;
-                margin: 5px 5px 5px 5px;
             }
              img {
                  border-radius: 0%;
                  width: 140px;
                  height: 160px;
+                 margin: 4px 4px 4px 4px;
+             }
+             button {
+               font-size: 20px;
+               background-color: pink;
+               padding: 2px;
+               border: solid 1px red;
+               border-radius: 3px;
+               margin: 3px 3px;
+               font-family: Georgia, 'Times New Roman', Times, serif;
+             }
+             button:hover {
+               background-color: violet;
+             }
+             .active{
+               background-color: rebeccapurple;
+             }
+             .active2 button {
+               background-color: rebeccapurple;
+             }
+             body {
+               background-color: rgb(228, 140, 106);
              }
         </style>
     </head>
     <body>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Procure por nomes..">
         <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('todos')"> todos</button>
-            <button class="btn" onclick="filterSelection('cabelo')"> cabelo</button>
-            <button class="btn" onclick="filterSelection('anime')"> anime</button>
-            <button class="btn" onclick="filterSelection('personalidade')"> personalidade</button>
+            <button class="btn active" onclick="filterSelection('todos')"> Todos</button>
+            <button class="btn" onclick="filterSelection('cabelo')">Cor do cabelo</button>
+            <button class="btn" onclick="filterSelection('anime')"> Anime</button>
+            <button class="btn" onclick="filterSelection('personalidade')"> Personalidade</button>
+            <button class="btn" onclick="filterSelection('raça')"> Raça</button>
           </div>
 <div class="flex container" id="myUL">
-  <div class="filterDiv ull todos cabelo preto owo illegal konosuba humano sagitario not-fav"><img src="https://i.imgur.com/NRPdkzv.png" alt="nig"><br><a>Megumin</a></div>
-  <div class="filterDiv ull todos cabelo laranja ara-ara legal senko-san furry ? fav"><img src="https://i.imgur.com/xcz9zDQ.png" alt="nib"><br><a>Senko</a></div>
-  <div class="filterDiv ull todos cabelo azul genki illegal outros humano virgem fav"><img src="https://i.imgur.com/Q4cmeRn.png" alt="miku!"><br><a>Miku</a></div>
-  <div class="filterDiv ull todos cabelo branco *-* illegal nanatsu-no-taizai humano ? not-fav"><img src="https://i.imgur.com/UAU7fe1.png" alt="Elizabeth"><br><a>Elizabeth</a></div>
-  <div class="btn filterDiv cabelo branco azul preto laranja"><button onclick="filterSelection('azul')">azul</button></div>
-  <div class="btn filterDiv cabelo branco azul preto laranja"><button onclick="filterSelection('branco')">branco</button></div>
-  <div class="btn filterDiv cabelo branco azul preto laranja"><button onclick="filterSelection('preto')">preto</button></div>
-  <div class="btn filterDiv cabelo branco azul preto laranja"><button onclick="filterSelection('laranja')">laranja</button></div>
-  <div class="btn filterDiv anime konosuba senko-san nanatsu-no-taizai outros"><button onclick="filterSelection('konosuba')">konosuba</button></div>
-  <div class="btn filterDiv anime konosuba senko-san nanatsu-no-taizai outros"><button onclick="filterSelection('senko-san')">senko-san</button></div>
-  <div class="btn filterDiv anime konosuba senko-san nanatsu-no-taizai outros"><button onclick="filterSelection('nanatsu-no-taizai')">nanatsu-no-taizai</button></div>
-  <div class="btn filterDiv anime konosuba senko-san nanatsu-no-taizai outros"><button onclick="filterSelection('outros')">outros</button></div>
-  <div class="btn filterDiv personalidade ara-ara genki *-* owo"><button onclick="filterSelection('ara-ara')">ara-ara</button></div>
-  <div class="btn filterDiv personalidade ara-ara genki *-* owo"><button onclick="filterSelection('genki')">genki</button></div>
-  <div class="btn filterDiv personalidade ara-ara genki *-* owo"><button onclick="filterSelection('*-*')">*-*</button></div>
-  <div class="btn filterDiv personalidade ara-ara genki *-* owo"><button onclick="filterSelection('owo')">owo</button></div>
+
+  <i id="ISSO AQUI SÃO AS PERSONAGENS"></i>
+  <div class="filterDiv ull todos raça signo anime personalidade cabelo preto caótica konosuba humana sagitario"><img src="https://i.imgur.com/NRPdkzv.png" alt="nig"><br><a>Megumin</a></div>
+  <div class="filterDiv ull todos raça signo anime personalidade cabelo laranja onee-san senko-san furry"><img src="https://i.imgur.com/xcz9zDQ.png" alt="nib"><br><a>Senko</a></div>
+  <div class="filterDiv ull todos raça signo anime personalidade cabelo azul genki vocaloid programa virgem"><img src="https://i.imgur.com/Q4cmeRn.png" alt="miku!"><br><a>Miku</a></div>
+  <div class="filterDiv ull todos raça signo anime personalidade cabelo branco pet nanatsu-no-taizai humana"><img src="https://i.imgur.com/UAU7fe1.png" alt="Elizabeth"><br><a>Elizabeth</a></div>
+  <div class="filterDiv ull todos raça signo anime personalidade cabelo rosa pet yuru-yuri humana"><img src="https://i.imgur.com/LOTfC8z.png" alt="akari"><br><a>Akari</a></div>
+</div>
+
+<div class="btnflex" id="myBtnContainer2">
+
+  <div class="btn2 active2"></div> <i id="ISSO AQUI É UTIL PQ EU PRECISO DE UM ELEMENTO COM A CLASSE -ACTIVE2- PARA O JAVASCRIPT DO HIGHLIGHT FUNCIONAR"></i>
+
+<i id="ISSO AQUI SÃO AS CORES DE CABELO"></i>
+  <div class="btn2 filterDiv cabelo branco azul preto laranja rosa"><button onclick="filterSelection('azul')">Azul</button></div>
+  <div class="btn2 filterDiv cabelo branco azul preto laranja rosa"><button onclick="filterSelection('branco')">Branco</button></div>
+  <div class="btn2 filterDiv cabelo branco azul preto laranja rosa"><button onclick="filterSelection('preto')">Preto</button></div>
+  <div class="btn2 filterDiv cabelo branco azul preto laranja rosa"><button onclick="filterSelection('laranja')">Laranja</button></div>
+  <div class="btn2 filterDiv cabelo branco azul preto laranja rosa"><button onclick="filterSelection('rosa')">Rosa</button></div>
+<i id="ISSO AQUI SÃO OS DIFERENTES ANIMES"></i>
+  <div class="btn2 filterDiv anime konosuba senko-san nanatsu-no-taizai vocaloid yuru-yuri"><button onclick="filterSelection('konosuba')">Konosuba</button></div>
+  <div class="btn2 filterDiv anime konosuba senko-san nanatsu-no-taizai vocaloid yuru-yuri"><button onclick="filterSelection('senko-san')">Senko-san</button></div>
+  <div class="btn2 filterDiv anime konosuba senko-san nanatsu-no-taizai vocaloid yuru-yuri"><button onclick="filterSelection('nanatsu-no-taizai')">Nanatsu no Taizai</button></div>
+  <div class="btn2 filterDiv anime konosuba senko-san nanatsu-no-taizai vocaloid yuru-yuri"><button onclick="filterSelection('vocaloid')">Vocaloid</button></div>
+  <div class="btn2 filterDiv anime konosuba senko-san nanatsu-no-taizai vocaloid yuru-yuri"><button onclick="filterSelection('yuru-yuri')">Yuru Yuri</button></div>
+<i id="ISSO AQUI SÃO OS TIPOS DE PERSONALIDADE"></i>  
+  <div class="btn2 filterDiv personalidade onee-san genki pet caótica"><button onclick="filterSelection('onee-san')">Onee-san</button></div>
+  <div class="btn2 filterDiv personalidade onee-san genki pet caótica"><button onclick="filterSelection('genki')">Genki</button></div>
+  <div class="btn2 filterDiv personalidade onee-san genki pet caótica"><button onclick="filterSelection('pet')">Pet</button></div>
+  <div class="btn2 filterDiv personalidade onee-san genki pet caótica"><button onclick="filterSelection('caótica')">Caótica</button></div>
+<i id="ISSO AQUI SÃO AS RAÇAS"></i>
+  <div class="btn2 filterDiv raça humana furry vampiro espírito divinidade"><button onclick="filterSelection('humana')">Humana</button></div>
+  <div class="btn2 filterDiv raça humana furry vampiro espírito divinidade"><button onclick="filterSelection('')"></button></div>
+  <div class="btn2 filterDiv raça humana furry vampiro espírito divinidade"><button onclick="filterSelection('furry')">Furry</button></div>
+  <div class="btn2 filterDiv raça humana furry vampiro espírito divinidade"><button onclick="filterSelection('')"></button></div>
+
 </div>
         <script src="cheatjs.js"></script>
     </body>

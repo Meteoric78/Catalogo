@@ -64,3 +64,14 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+var btnContainer2 = document.getElementById("myBtnContainer2");
+var btns2 = btnContainer2.getElementsByClassName("btn2");
+for (var i = 0; i < btns2.length; i++) {
+  btns2[i].addEventListener("click", function() {
+    var current2 = document.getElementsByClassName("active2");
+    current2[0].className = current2[0].className.replace(" active2", "");
+    this.className += " active2";
+  });
+}
+
+filterSelection('todos');
