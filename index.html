@@ -24,16 +24,18 @@
                 flex-direction: row;
                 text-align: center;
                 flex-wrap: wrap;
-                width: 60%;
+                width: 75%;
+                border: solid 3px yellow;
             }
             .btnflex {
               position: absolute;
+              position: fixed;
               display: flex;
               flex-direction: row;
               flex-wrap: wrap;
               top: 67px;
-              left: 60%;
-              width: 40%;
+              left: 75%;
+              width: 25%;
             }
             .ull {
                 text-align: center;
@@ -45,7 +47,7 @@
                  margin: 4px 4px 4px 4px;
              }
              button {
-               font-size: 20px;
+               font-size: 18px;
                background-color: pink;
                padding: 2px;
                border: solid 1px red;
@@ -62,13 +64,36 @@
              .active2 button {
                background-color: rebeccapurple;
              }
+             /* width */
+::-webkit-scrollbar {
+  width: 1vh;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(228, 140, 106); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: pink; 
+  height: 10vh;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rebeccapurple;
+  width: 2vh;
+  height: 25vh;
+}
              body {
                background-color: rgb(228, 140, 106);
+               height: 5000px;
              }
         </style>
     </head>
     <body>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Procure por nomes..">
+        <input autocomplete="off" type="text" id="myInput" onkeyup="myFunction()" placeholder="Procure por nomes..">
         <div id="myBtnContainer">
             <button class="btn active" onclick="filterSelection('todos')"> Todos</button>
             <button class="btn" onclick="filterSelection('cabelo')">Cor do cabelo</button>
