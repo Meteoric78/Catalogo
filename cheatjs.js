@@ -17,6 +17,25 @@ function myFunction() {
       }
     }
   }
+  function myFunction2() {
+    // Declare variables
+    var input2, filter2, ul2, li2, u, i2, utxtValue;
+    input2 = document.getElementById('myInput');
+    filter2 = input2.value.toUpperCase();
+    ul2 = document.getElementById("myUL2");
+    li2 = ul2.getElementsByClassName('ull2');
+  
+    // Loop through all list items, and hide those who don't match the search query
+    for (i2 = 0; i2 < li2.length; i2++) {
+      u = li2[i2].getElementsByTagName("u")[0];
+      utxtValue = u.textContent || u.innerText;
+      if (utxtValue.toUpperCase().indexOf(filter2) > -1) {
+        li2[i2].style.display = "";
+      } else {
+        li2[i2].style.display = "none";
+      }
+    }
+  }
   filterSelection("all")
 function filterSelection(c) {
   var x, i;
